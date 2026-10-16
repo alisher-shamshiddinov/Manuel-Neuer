@@ -1,0 +1,114 @@
+/* Custom Styles and Animations for Manuel Neuer Fan Page */
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(220, 5, 45, 0.6);
+  }
+  .box-glow {
+    box-shadow: 0 0 25px rgba(220, 5, 45, 0.25);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a3346;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc052d;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Tab active styling */
+.tab-btn.active {
+  background: #dc052d;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(220, 5, 45, 0.4);
+}
+
+/* Goal Zone Button Hover effect */
+.goal-zone:active {
+  transform: scale(0.96);
+}
+
+/* Ball Kick Keyframe Animation */
+@keyframes kickBall {
+  0% {
+    transform: translate(0, 80px) scale(0.3);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--target-x, 0px), var(--target-y, 0px)) scale(1.1);
+    opacity: 1;
+  }
+}
+
+.ball-animating {
+  animation: kickBall 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Keeper Dive Keyframe */
+@keyframes keeperDive {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  60% {
+    transform: translate(var(--dive-x, 0px), var(--dive-y, 0px)) rotate(var(--dive-rot, 0deg)) scale(1.05);
+  }
+  100% {
+    transform: translate(var(--dive-x, 0px), var(--dive-y, 0px)) rotate(var(--dive-rot, 0deg)) scale(1);
+  }
+}
+
+.keeper-dive {
+  animation: keeperDive 0.45s ease-out forwards;
+}
+
+/* Subtle Card Glow Transitions */
+.bg-bayern-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Quiz Option Hover/Selected states */
+.quiz-opt-btn {
+  transition: all 0.2s ease-in-out;
+}
+.quiz-opt-btn:hover {
+  transform: translateY(-2px);
+  border-color: #facc15;
+}
+.quiz-opt-btn.correct {
+  background-color: rgba(16, 185, 129, 0.25) !important;
+  border-color: #10b981 !important;
+  color: #34d399 !important;
+}
+.quiz-opt-btn.wrong {
+  background-color: rgba(239, 68, 68, 0.25) !important;
+  border-color: #ef4444 !important;
+  color: #f87171 !important;
+}

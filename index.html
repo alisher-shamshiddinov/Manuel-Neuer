@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel Neuer — Afsonaviy Sweeper-Keeper | The Wall</title>
+  
+  <!-- Favicon / Logo Icon -->
+  <link rel="icon" href="https://img.icons8.com/color/96/football2--v1.png" type="image/png">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bayern: {
+              red: '#DC052D',
+              darkRed: '#960018',
+              blue: '#0066B2',
+              dark: '#0e1118',
+              card: '#161b26',
+              accent: '#facc15'
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'system-ui', 'sans-serif'],
+            display: ['Bebas Neue', 'Impact', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans selection:bg-bayern-red selection:text-white antialiased overflow-x-hidden">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-gray-950/80 backdrop-blur-md border-b border-gray-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-bayern-red to-yellow-500 p-0.5 flex items-center justify-center shadow-lg shadow-red-900/40">
+          <div class="w-full h-full bg-gray-900 rounded-full flex items-center justify-center font-display text-2xl text-yellow-400 group-hover:scale-110 transition-transform">
+            MN1
+          </div>
+        </div>
+        <div>
+          <span class="font-display tracking-widest text-2xl text-white block leading-none">MANUEL NEUER</span>
+          <span class="text-[10px] tracking-widest text-gray-400 uppercase font-semibold">The Sweeper-Keeper Legend</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-gray-300">
+        <a href="#about" class="hover:text-bayern-red transition-colors flex items-center gap-1.5"><i class="fa-solid fa-user-shield text-xs text-yellow-400"></i> Tarjimai hol</a>
+        <a href="#style" class="hover:text-bayern-red transition-colors flex items-center gap-1.5"><i class="fa-solid fa-bolt text-xs text-yellow-400"></i> Sweeper-Keeper</a>
+        <a href="#trophies" class="hover:text-bayern-red transition-colors flex items-center gap-1.5"><i class="fa-solid fa-trophy text-xs text-yellow-400"></i> Yutuqlar</a>
+        <a href="#moments" class="hover:text-bayern-red transition-colors flex items-center gap-1.5"><i class="fa-solid fa-star text-xs text-yellow-400"></i> Esda qolarli o'yinlar</a>
+        <a href="#game-section" class="hover:text-yellow-400 text-bayern-red transition-colors flex items-center gap-1.5 font-bold"><i class="fa-solid fa-gamepad"></i> Mini O'yin</a>
+        <a href="#quiz-section" class="hover:text-bayern-red transition-colors flex items-center gap-1.5"><i class="fa-solid fa-circle-question text-xs text-yellow-400"></i> Viktorina</a>
+      </div>
+
+      <!-- Quick Action / Status -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#game-section" class="px-4 py-2 text-xs font-bold uppercase tracking-wider bg-bayern-red hover:bg-red-700 text-white rounded-lg shadow-md shadow-red-900/50 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+          <i class="fa-solid fa-futbol"></i> Penalti Qaytar!
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileMenuBtn" aria-label="Menyu" class="lg:hidden text-gray-300 hover:text-white p-2 rounded-lg bg-gray-900 border border-gray-800">
+        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-gray-900/95 backdrop-blur-xl border-b border-gray-800 px-6 py-6 transition-all">
+      <div class="flex flex-col gap-4 text-base font-semibold">
+        <a href="#about" class="mobile-link py-2 border-b border-gray-800/60 hover:text-bayern-red"><i class="fa-solid fa-user-shield text-yellow-400 mr-2"></i> Tarjimai hol</a>
+        <a href="#style" class="mobile-link py-2 border-b border-gray-800/60 hover:text-bayern-red"><i class="fa-solid fa-bolt text-yellow-400 mr-2"></i> Sweeper-Keeper Uslubi</a>
+        <a href="#trophies" class="mobile-link py-2 border-b border-gray-800/60 hover:text-bayern-red"><i class="fa-solid fa-trophy text-yellow-400 mr-2"></i> Yutuqlar va Rekordlar</a>
+        <a href="#moments" class="mobile-link py-2 border-b border-gray-800/60 hover:text-bayern-red"><i class="fa-solid fa-star text-yellow-400 mr-2"></i> Esda qolarli o'yinlar</a>
+        <a href="#game-section" class="mobile-link py-2 border-b border-gray-800/60 text-bayern-red font-bold"><i class="fa-solid fa-gamepad mr-2"></i> Darvozabonlik O'yini</a>
+        <a href="#quiz-section" class="mobile-link py-2 hover:text-bayern-red"><i class="fa-solid fa-circle-question text-yellow-400 mr-2"></i> Viktorina (Quiz)</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+    <!-- Background Glow and Elements -->
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-red-600/15 rounded-full blur-[140px]"></div>
+      <div class="absolute bottom-10 left-10 w-[450px] h-[450px] bg-blue-600/10 rounded-full blur-[120px]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Text -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bayern-card border border-red-500/30 text-yellow-400 text-xs sm:text-sm font-semibold tracking-wide uppercase shadow-inner">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+            Futbol Tarixidagi Eng Buyuk Darvozabon
+          </div>
+
+          <h1 class="text-5xl sm:text-7xl xl:text-8xl font-display uppercase tracking-wider text-white leading-none">
+            MANUEL <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-400 to-amber-300">NEUER</span>
+          </h1>
+
+          <p class="text-xl sm:text-2xl font-light text-gray-300 italic">
+            "Der Titan 2.0" &bull; O'yin qoidalarini tubdan o'zgartirgan <span class="text-yellow-400 font-semibold not-italic">Sweeper-Keeper</span>
+          </p>
+
+          <p class="text-gray-400 max-w-2xl text-base sm:text-lg leading-relaxed">
+            Manuel Neuer shunchaki darvoza chizig'ida turadigan posbon emas, balki butun jamoa himoyasini boshqaruvchi, 11-maydon o'yinchisi sifatida yangi davr yaratgan afsonadir. 2014-yilgi Jahon Chempioni, ikki karra Trebl sohibi va rekordlar qiroli.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#about" class="px-8 py-3.5 bg-bayern-red hover:bg-red-700 text-white font-bold rounded-xl shadow-lg shadow-red-900/50 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+              <i class="fa-solid fa-arrow-down"></i> Tarixini O'rganish
+            </a>
+            <a href="#game-section" class="px-8 py-3.5 bg-gray-900 hover:bg-gray-800 text-yellow-400 border border-yellow-500/40 font-bold rounded-xl shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+              <i class="fa-solid fa-futbol"></i> Penalti O'yini
+            </a>
+          </div>
+
+          <!-- Quick Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-gray-800/80">
+            <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800">
+              <div class="text-2xl font-display text-yellow-400">1986</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider">Tug'ilgan yili</div>
+            </div>
+            <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800">
+              <div class="text-2xl font-display text-white">193 sm</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider">Bo'yi (Vazn 93kg)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800">
+              <div class="text-2xl font-display text-red-500">#1 / #1</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider">Raqami (Bayern / GER)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800">
+              <div class="text-2xl font-display text-yellow-400">30+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider">Rasmiy Kuboklar</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Interactive Visual Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Glow background -->
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-red-600 to-yellow-500 opacity-30 blur-xl"></div>
+            
+            <div class="relative bg-gradient-to-b from-gray-900 via-gray-900 to-gray-950 rounded-2xl border border-gray-800 p-6 shadow-2xl overflow-hidden">
+              <!-- Top Card Info -->
+              <div class="flex items-center justify-between pb-4 border-b border-gray-800">
+                <div class="flex items-center gap-3">
+                  <span class="text-3xl">🇩🇪</span>
+                  <div>
+                    <h2 class="font-bold text-white leading-tight">Manuel Peter Neuer</h2>
+                    <p class="text-xs text-gray-400">Gelsenkirchen, Germaniya</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 text-xs font-bold bg-red-600/20 text-red-400 border border-red-500/30 rounded-md">
+                  GK AFSONA
+                </span>
+              </div>
+
+              <!-- Main Hero Player Image / Illustration Container -->
+              <div class="relative my-6 aspect-square rounded-xl overflow-hidden bg-gradient-to-tr from-gray-950 via-slate-900 to-red-950 flex flex-col items-center justify-center p-6 border border-gray-800 text-center group">
+                <img 
+                  src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" 
+                  alt="Futbol stadioni fon"
+                  class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                >
+                <div class="relative z-10 flex flex-col items-center">
+                  <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-yellow-400/80 shadow-2xl shadow-yellow-500/20 overflow-hidden mb-4 bg-gray-800 relative">
+                    <img 
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Manuel_Neuer_2020.jpg/640px-Manuel_Neuer_2020.jpg" 
+                      alt="Manuel Neuer"
+                      onerror="this.src='https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80'"
+                      class="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-500"
+                    >
+                  </div>
+                  <h3 class="text-2xl font-display tracking-wider text-white">"MENING HIMOYA CHIZIG'IM — BUTUN MAYDON"</h3>
+                  <p class="text-xs text-yellow-400/90 mt-1 italic font-medium">— Manuel Neuer</p>
+                </div>
+              </div>
+
+              <!-- Stats Radar / Highlights -->
+              <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                <div class="bg-gray-950/70 p-2.5 rounded-lg border border-gray-800">
+                  <div class="text-base font-bold text-yellow-400">99</div>
+                  <div class="text-[10px] text-gray-400 uppercase">Reaksiya</div>
+                </div>
+                <div class="bg-gray-950/70 p-2.5 rounded-lg border border-gray-800">
+                  <div class="text-base font-bold text-red-400">98</div>
+                  <div class="text-[10px] text-gray-400 uppercase">Sweeping</div>
+                </div>
+                <div class="bg-gray-950/70 p-2.5 rounded-lg border border-gray-800">
+                  <div class="text-base font-bold text-blue-400">95</div>
+                  <div class="text-[10px] text-gray-400 uppercase">Pas uzatish</div>
+                </div>
+              </div>
+
+              <!-- Interactive Sound/Quote Button -->
+              <button id="quoteSoundBtn" class="w-full mt-4 py-2.5 px-4 rounded-xl bg-gray-800/80 hover:bg-gray-800 border border-gray-700/60 text-xs font-semibold text-gray-300 flex items-center justify-center gap-2 transition-colors">
+                <i class="fa-solid fa-volume-high text-yellow-400"></i> Afsonaviy iqtibosni ko'rish
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS COUNTER STRIP ================= -->
+  <section class="py-12 bg-gradient-to-r from-gray-900 via-bayern-card to-gray-900 border-y border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-800">
+        <div class="pt-4 md:pt-0">
+          <div class="text-4xl sm:text-5xl font-display text-white counter" data-target="800">0</div>
+          <span class="text-bayern-red font-bold text-lg">+</span>
+          <p class="text-xs sm:text-sm uppercase tracking-wider text-gray-400 mt-1 font-medium">Professional O'yinlar</p>
+        </div>
+        <div class="pt-4 md:pt-0">
+          <div class="text-4xl sm:text-5xl font-display text-yellow-400 counter" data-target="360">0</div>
+          <span class="text-yellow-500 font-bold text-lg">+</span>
+          <p class="text-xs sm:text-sm uppercase tracking-wider text-gray-400 mt-1 font-medium">Quruq O'yinlar (Clean Sheets)</p>
+        </div>
+        <div class="pt-4 md:pt-0">
+          <div class="text-4xl sm:text-5xl font-display text-white counter" data-target="124">0</div>
+          <span class="text-bayern-red font-bold text-lg"> ta</span>
+          <p class="text-xs sm:text-sm uppercase tracking-wider text-gray-400 mt-1 font-medium">Germaniya Terma Jamoasida</p>
+        </div>
+        <div class="pt-4 md:pt-0">
+          <div class="text-4xl sm:text-5xl font-display text-yellow-400 counter" data-target="32">0</div>
+          <span class="text-yellow-500 font-bold text-lg"> ta</span>
+          <p class="text-xs sm:text-sm uppercase tracking-wider text-gray-400 mt-1 font-medium">Yirik Kuboklar (32 ta)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BIOGRAPHY & TIMELINE ================= -->
+  <section id="about" class="py-24 bg-gray-950 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-bayern-red">Tarjimai Hol</span>
+        <h2 class="text-4xl sm:text-5xl font-display text-white mt-2">BOLALIKDAN JAHON CHO'QQISIGACHA</h2>
+        <p class="text-gray-400 mt-3 text-sm sm:text-base">Gelsenkirchen ko'chalaridan to Myunxen va Marakana stadionida Jahon Kubogini bosh uzra ko'targan buyuk yo'l.</p>
+      </div>
+
+      <!-- Timeline Tabs -->
+      <div class="flex justify-center mb-12">
+        <div class="inline-flex p-1 bg-gray-900 rounded-xl border border-gray-800" role="tablist">
+          <button class="tab-btn active px-4 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all" data-target="tab-childhood">
+            <i class="fa-solid fa-child mr-1.5"></i> Yoshlik va Schalke
+          </button>
+          <button class="tab-btn px-4 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-gray-400 hover:text-white" data-target="tab-bayern">
+            <i class="fa-solid fa-shield-halved mr-1.5"></i> Bayern Munich Davri
+          </button>
+          <button class="tab-btn px-4 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-gray-400 hover:text-white" data-target="tab-national">
+            <i class="fa-solid fa-flag mr-1.5"></i> Germaniya Terma Jamoasi
+          </button>
+          <button class="tab-btn px-4 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-gray-400 hover:text-white" data-target="tab-return">
+            <i class="fa-solid fa-heart-pulse mr-1.5"></i> Jarohat va Qaytish
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Contents -->
+      <div class="relative bg-bayern-card border border-gray-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+        
+        <!-- Tab 1: Schalke -->
+        <div id="tab-childhood" class="tab-pane grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="aspect-video sm:aspect-4/3 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800 relative">
+              <img 
+                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" 
+                alt="Schalke davri" 
+                class="w-full h-full object-cover"
+              >
+              <div class="absolute bottom-3 left-3 bg-blue-900/90 text-white text-xs px-3 py-1 rounded-md font-bold">
+                1991–2011: Schalke 04
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Tug'ilish & Boshlanish (1986–2011)</span>
+            <h3 class="text-2xl sm:text-3xl font-display text-white">Gelsenkirchen Bolasi va Schalke 04 Mo'jizasi</h3>
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+              Manuel 1986-yil 27-martda Gelsenkirchen shahrida tug'ilgan. Atigi 5 yoshida "Schalke 04" bolalar jamoasiga qo'shildi. Dastlab maydon o'yinchisi bo'lishni xohlagan bo'lsa-da, bo'sh turgan darvozaga o'tdi va shu yerda o'z taqdirini topdi.
+            </p>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              2006-yilda u 20 yoshida asosiy darvozabonlikni egalladi. 2008-yil UEFA Chempionlar Ligasida "Porto"ga qarshi penaltilar seriyasida butun Yevropani lol qoldirdi. 2011-yilda "Manchester Yunayted"ga qarshi o'yindagi seyvlaridan so'ng afsonaviy Ser Aleks Fergyuson: <em>"Hayotimda ko'rgan eng daxshatli darvozabonlik o'yini"</em> deya tan bergan edi.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-3 py-1 rounded-full bg-blue-950/60 border border-blue-800 text-blue-300 text-xs">DFB-Pokal 2011</span>
+              <span class="px-3 py-1 rounded-full bg-blue-950/60 border border-blue-800 text-blue-300 text-xs">203 ta o'yin Schalke safida</span>
+              <span class="px-3 py-1 rounded-full bg-blue-950/60 border border-blue-800 text-blue-300 text-xs">Gelsenkirchen qahramoni</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Bayern -->
+        <div id="tab-bayern" class="tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="aspect-video sm:aspect-4/3 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800 relative">
+              <img 
+                src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80" 
+                alt="Bayern Munich stadioni" 
+                class="w-full h-full object-cover"
+              >
+              <div class="absolute bottom-3 left-3 bg-bayern-red text-white text-xs px-3 py-1 rounded-md font-bold">
+                2011 – Hozirgacha: FC Bayern
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-bold text-red-500 uppercase tracking-wider">Buyuklik Davri (2011–Hozir)</span>
+            <h3 class="text-2xl sm:text-3xl font-display text-white">Bavariya Saltanati: 2 marta Trebl va 11 ta Ketma-ket Salfetka</h3>
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+              2011-yil yozida Neuer 30 million yevro evaziga "Bayern Munich"ga o'tdi. Bu transfer futbol tarixidagi eng muvaffaqiyatli xaridlardan biri bo'ldi. Dastlab muxlislar noroziligiga duch kelgan Neuer o'zining benuqson seyvlari bilan barchaning mehrini qozondi.
+            </p>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              2013-yilda Yupp Xaynkes boshchiligida va 2020-yilda Xansi Flik bilan — ikki marotaba TREBL (Bundesliga, Germaniya Kubogi va UEFA Chempionlar Ligasi)ni qo'lga kiritdi. U Myunxenda 500 dan ortiq o'yin o'tkazib, uzoq yillar davomida jamoa sardori bo'lib kelmoqda.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-3 py-1 rounded-full bg-red-950/60 border border-red-800 text-red-300 text-xs">11x Bundesliga Chempioni</span>
+              <span class="px-3 py-1 rounded-full bg-red-950/60 border border-red-800 text-red-300 text-xs">2x Chempionlar Ligasi</span>
+              <span class="px-3 py-1 rounded-full bg-red-950/60 border border-red-800 text-red-300 text-xs">2x Trebl (2013, 2020)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: National -->
+        <div id="tab-national" class="tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="aspect-video sm:aspect-4/3 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800 relative">
+              <img 
+                src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=800&q=80" 
+                alt="Jahon Chempionati kubogi" 
+                class="w-full h-full object-cover"
+              >
+              <div class="absolute bottom-3 left-3 bg-yellow-500 text-gray-950 text-xs px-3 py-1 rounded-md font-bold">
+                Die Mannschaft (2009–2024)
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">Jahon Zafari (2014)</span>
+            <h3 class="text-2xl sm:text-3xl font-display text-white">Braziliya 2014: Oltin Qo'lqop va Jahon Chempionligi</h3>
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+              2014-yilgi Jahon Chempionati Manuel Neuerning xalqaro sahnadagi cho'qqisi bo'ldi. Jazoirga qarshi 1/8 final uchrashuvida u jarima maydonidan 20–30 metr tashqariga chiqib to'plarni tozalashi orqali "Sweeper-Keeper" atamasini dunyoga muhrlab qo'ydi.
+            </p>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Turnir davomida atigi 4 ta gol o'tkazib yubordi va musobaqaning eng yaxshi darvozaboni sifatida "Oltin Qo'lqop" sovriniga loyiq ko'rildi. 2024-yil avgust oyida u Germaniya terma jamoasidagi 124 ta o'yindan so'ng xalqaro faoliyatini yakunladi.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-700 text-yellow-300 text-xs">Jahon Chempioni 2014</span>
+              <span class="px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-700 text-yellow-300 text-xs">Oltin Qo'lqop 2014</span>
+              <span class="px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-700 text-yellow-300 text-xs">124 ta xalqaro o'yin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Return from injury -->
+        <div id="tab-return" class="tab-pane hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="aspect-video sm:aspect-4/3 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800 relative">
+              <img 
+                src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=800&q=80" 
+                alt="Matonat va Qaytish" 
+                class="w-full h-full object-cover"
+              >
+              <div class="absolute bottom-3 left-3 bg-emerald-600 text-white text-xs px-3 py-1 rounded-md font-bold">
+                2022–2024: Fenomen Qaytish
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Matonat va Iroda</span>
+            <h3 class="text-2xl sm:text-3xl font-display text-white">Chang'i Falokati va Katta Futbolga Qaytish</h3>
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+              2022-yil dekabrida Qatardagi JCHdan so'ng Manuel chang'i uchayotganda oyog'ini og'ir sindirib oldi. Ko'plab mutaxassislar uning 36 yoshida futbolga qayta olmasligini, faoliyatini yakunlashga majbur bo'lishini taxmin qilishdi.
+            </p>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Ammo Neuer taslim bo'lmadi! 10 oylik og'ir reabilitatsiyadan so'ng u 2023-yil oktyabrida maydonga qaytdi va yana o'zining jahon darajasidagi formasini namoyish qildi. Chempionlar Ligasida "Arsenal" va "Real Madrid"ga qarshi super-seyvlari bilan o'zining hanuz tengsiz ekanligini isbotladi.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800 text-emerald-300 text-xs">Temir iroda</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800 text-emerald-300 text-xs">Yana bir bor Chempion</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800 text-emerald-300 text-xs">38 yoshda ham cho'qqida</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SWEEPER-KEEPER PLAYSTYLE ================= -->
+  <section id="style" class="py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-yellow-400">Taktik Inqilob</span>
+        <h2 class="text-4xl sm:text-5xl font-display text-white mt-2">NEGA U DARVOZABONLIKNI BUTKUL O'ZGARTIRDI?</h2>
+        <p class="text-gray-400 mt-3 text-sm sm:text-base">Neuergacha va Neuerdan keyingi futbol: u qanday qilib darvozabonni 11-maydon o'yinchisiga aylantirdi?</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-bayern-card p-8 rounded-2xl border border-gray-800 hover:border-bayern-red/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
+          <div class="w-14 h-14 rounded-xl bg-red-600/10 border border-red-500/30 text-bayern-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-bayern-red group-hover:text-white transition-all">
+            <i class="fa-solid fa-person-running"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Sweeper (Libero) pozitsiyasi</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Himoyachilar yuqori chiziqda o'ynaganda, Neuer ularning orqasidagi bo'sh 30-40 metr maydonni nazorat qiladi. U to'p raqib hujumchisiga yetib bormasdan bosh yoki oyoq bilan xavfni bartaraf etadi.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-bayern-card p-8 rounded-2xl border border-gray-800 hover:border-yellow-400/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
+          <div class="w-14 h-14 rounded-xl bg-yellow-400/10 border border-yellow-500/30 text-yellow-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-yellow-400 group-hover:text-gray-950 transition-all">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Playmaker Darvozabon</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Ikkala oyog'ida ham ajoyib pas uzatish qobiliyati bor. Pep Gvardiola davrida Neuerning pas aniqligi 85% dan yuqori bo'lgan. U pressing ostida qolgan jamoaga hujumni qaytadan boshlashga imkon beradi.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-bayern-card p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
+          <div class="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
+            <i class="fa-solid fa-hand"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Handbol "X-Save" Uslubi</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Yakka-yakka (1v1) vaziyatlarda Neuer yerga erta yotmaydi. U handbol darvozabonlari kabi qo'l va oyoqlarini "X" shaklida kerib, zarba burchagini maksimal darajada yopadi.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="bg-bayern-card p-8 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
+          <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Sovuq Ter va Psixologik Ustunlik</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Raqib hujumchilari Neuer bilan yakkama-yakka chiqqanda o'zlarini yo'qotib qo'yishadi. Uning ulkan gavdasi, sovuqqonligi va xotirjamligi raqibni noaniq zarba berishga majbur qiladi.
+          </p>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="bg-bayern-card p-8 rounded-2xl border border-gray-800 hover:border-purple-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
+          <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all">
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Lazerdek To'p Otish (Qo'l bilan)</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Neuer to'pni ushlagach, uni darhol qo'li bilan 50-60 metr masofadagi yarim himoyachi yoki qanot vingeriga aniq tashlab beradi. Bu Bayern va Germaniyaga chaqmoqdek kontrhujum boshlash imkonini beradi.
+          </p>
+        </div>
+
+        <!-- Pillar 6 -->
+        <div class="bg-bayern-card p-8 rounded-2xl border border-gray-800 hover:border-amber-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-gray-950 transition-all">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Yetakchilik va Kapitanlik</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            U maydonda faqat darvozabon emas, maydonning orqa qismidagi bosh murabbiy. Har bir himoyachi va yarim himoyachining joylashuvini 90 daqiqa davomida ovozi va imo-ishoralari bilan yo'naltirib turadi.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TROPHY CABINET & RECORDS ================= -->
+  <section id="trophies" class="py-24 bg-gray-950 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-bayern-red">Sovrinlar Muzeyi</span>
+        <h2 class="text-4xl sm:text-5xl font-display text-white mt-2">BUYUK KUBOKLAR VA REKORDLAR</h2>
+        <p class="text-gray-400 mt-3 text-sm sm:text-base">Manuel Neuer o'zi ishtirok etgan deyarli barcha musobaqalarda zafar quchgan.</p>
+      </div>
+
+      <!-- Trophies Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+        <!-- Trophy 1 -->
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 text-center hover:border-yellow-400/50 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl text-yellow-400 mb-3"><i class="fa-solid fa-trophy"></i></div>
+          <div class="text-3xl font-display text-white">1x</div>
+          <div class="font-bold text-sm text-yellow-400 mt-1">FIFA Jahon Chempioni</div>
+          <div class="text-xs text-gray-400 mt-1">2014 (Braziliya)</div>
+        </div>
+
+        <!-- Trophy 2 -->
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 text-center hover:border-blue-400/50 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl text-blue-400 mb-3"><i class="fa-solid fa-award"></i></div>
+          <div class="text-3xl font-display text-white">2x</div>
+          <div class="font-bold text-sm text-white mt-1">UEFA Chempionlar Ligasi</div>
+          <div class="text-xs text-gray-400 mt-1">2013, 2020</div>
+        </div>
+
+        <!-- Trophy 3 -->
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 text-center hover:border-red-500/50 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl text-bayern-red mb-3"><i class="fa-solid fa-shield-cat"></i></div>
+          <div class="text-3xl font-display text-white">11x</div>
+          <div class="font-bold text-sm text-red-400 mt-1">Bundesliga Chempioni</div>
+          <div class="text-xs text-gray-400 mt-1">Ketma-ket chempionliklar</div>
+        </div>
+
+        <!-- Trophy 4 -->
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 text-center hover:border-yellow-400/50 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl text-yellow-500 mb-3"><i class="fa-solid fa-medal"></i></div>
+          <div class="text-3xl font-display text-white">6x</div>
+          <div class="font-bold text-sm text-white mt-1">Germaniya Kubogi (DFB)</div>
+          <div class="text-xs text-gray-400 mt-1">5 Bayern, 1 Schalke</div>
+        </div>
+
+        <!-- Trophy 5 -->
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 text-center hover:border-yellow-400/50 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl text-amber-400 mb-3"><i class="fa-solid fa-globe"></i></div>
+          <div class="text-3xl font-display text-white">2x</div>
+          <div class="font-bold text-sm text-amber-300 mt-1">FIFA Klublar JCH</div>
+          <div class="text-xs text-gray-400 mt-1">2013, 2020</div>
+        </div>
+
+        <!-- Trophy 6 -->
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 text-center hover:border-cyan-400/50 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl text-cyan-400 mb-3"><i class="fa-solid fa-star"></i></div>
+          <div class="text-3xl font-display text-white">2x</div>
+          <div class="font-bold text-sm text-white mt-1">UEFA Superkubogi</div>
+          <div class="text-xs text-gray-400 mt-1">2013, 2020</div>
+        </div>
+
+        <!-- Trophy 7 -->
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 text-center hover:border-emerald-400/50 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl text-emerald-400 mb-3"><i class="fa-solid fa-hands"></i></div>
+          <div class="text-3xl font-display text-white">5x</div>
+          <div class="font-bold text-sm text-emerald-400 mt-1">Dunyoning Eng Yaxshi GK</div>
+          <div class="text-xs text-gray-400 mt-1">IFFHS (2013, 2014, 2015, 2016, 2020)</div>
+        </div>
+
+        <!-- Trophy 8 -->
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 text-center hover:border-yellow-300/50 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl text-yellow-300 mb-3"><i class="fa-solid fa-hand-holding-hand"></i></div>
+          <div class="text-3xl font-display text-white">1x</div>
+          <div class="font-bold text-sm text-yellow-300 mt-1">JCH Oltin Qo'lqop</div>
+          <div class="text-xs text-gray-400 mt-1">2014 Golden Glove</div>
+        </div>
+
+      </div>
+
+      <!-- Historical Record Note -->
+      <div class="mt-12 bg-gradient-to-r from-red-950/40 via-gray-900 to-yellow-950/30 p-6 rounded-2xl border border-yellow-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="text-4xl text-yellow-400"><i class="fa-solid fa-certificate"></i></div>
+          <div>
+            <h4 class="text-lg font-bold text-white">Bundesliga Tarixidagi Eng Ko'p "Quruq O'yin" (Clean Sheets)</h4>
+            <p class="text-xs sm:text-sm text-gray-400">Oliver Kanning 204 o'yinlik afsonaviy rekordini yangilab, 220 dan ortiq "quruq o'yin" bilan mutlaq peshqadamga aylandi.</p>
+          </div>
+        </div>
+        <span class="px-4 py-2 bg-yellow-400 text-gray-950 font-bold rounded-xl text-sm whitespace-nowrap">
+          220+ Clean Sheets
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ICONIC MOMENTS ================= -->
+  <section id="moments" class="py-24 bg-gradient-to-b from-gray-950 to-gray-900 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-bayern-red">Afsonaviy O'yinlar</span>
+        <h2 class="text-4xl sm:text-5xl font-display text-white mt-2">MANUEL NEUERNING UNUTILMAS SHEDEVRLARI</h2>
+        <p class="text-gray-400 mt-3 text-sm sm:text-base">Ushbu o'yinlar futbol tarixida darvozabonlik san'atining eng yuqori namunasi sifatida eslanadi.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Moment 1: Algeria 2014 -->
+        <div class="bg-bayern-card rounded-2xl overflow-hidden border border-gray-800 group hover:border-yellow-500/50 transition-all flex flex-col">
+          <div class="relative h-48 bg-slate-800 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=700&q=80" 
+              alt="Germaniya vs Jazoir 2014" 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-red-600 text-white font-bold text-xs px-2.5 py-1 rounded">2014 JCH</span>
+            <span class="absolute bottom-3 left-3 text-white font-display text-xl">Germaniya 2 - 1 Jazoir</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Neuer maydonda 19 marotaba jarima maydonidan tashqarida to'pga tegdi va markaziy himoyachi vazifasini bajardi. Bu o'yin "Sweeper-Keeper" atamasining haqiqiy etaloni bo'ldi.
+            </p>
+            <div class="text-xs font-semibold text-yellow-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-fire"></i> Tarixdagi eng mashhur sweeping o'yini
+            </div>
+          </div>
+        </div>
+
+        <!-- Moment 2: Man United 2011 -->
+        <div class="bg-bayern-card rounded-2xl overflow-hidden border border-gray-800 group hover:border-blue-500/50 transition-all flex flex-col">
+          <div class="relative h-48 bg-slate-800 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1489944445391-11dd35574560?auto=format&fit=crop&w=700&q=80" 
+              alt="Schalke vs Manchester United 2011" 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-blue-600 text-white font-bold text-xs px-2.5 py-1 rounded">UCL 2011</span>
+            <span class="absolute bottom-3 left-3 text-white font-display text-xl">Schalke 04 vs Man United</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Uchinchi daqiqadayoq Runi, Giggs va Hernandesning 100% lik gollarini ketma-ket qaytardi. Fergyuson keyinchalik uni o'z jamoasiga olishga harakat qilganini tan olgan.
+            </p>
+            <div class="text-xs font-semibold text-blue-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-quote-left"></i> "Inson qobiliyatidan tashqari o'yin"
+            </div>
+          </div>
+        </div>
+
+        <!-- Moment 3: PSG Final 2020 -->
+        <div class="bg-bayern-card rounded-2xl overflow-hidden border border-gray-800 group hover:border-red-500/50 transition-all flex flex-col">
+          <div class="relative h-48 bg-slate-800 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=700&q=80" 
+              alt="Bayern vs PSG Final 2020" 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950 to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-bayern-red text-white font-bold text-xs px-2.5 py-1 rounded">UCL Final 2020</span>
+            <span class="absolute bottom-3 left-3 text-white font-display text-xl">Bayern 1 - 0 PSG</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Neymar va Kilian Mbappening bir necha metrdan yo'llagan zarbalarini oyog'i va qo'li bilan mo'jizaviy tarzda to'xtatib, Myunxenga 6-chi Chempionlar Ligasi kubogini keltirdi.
+            </p>
+            <div class="text-xs font-semibold text-red-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-shield"></i> Mutlaq g'alaba devori
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MINI GAME: SAVE THE PENALTY ================= -->
+  <section id="game-section" class="py-24 bg-gray-950 relative border-t border-gray-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-yellow-400">Interaktiv Qism</span>
+        <h2 class="text-4xl sm:text-5xl font-display text-white mt-2">DARVOZABONLIK SIMULYATORI: PENALTINI QAYTAR!</h2>
+        <p class="text-gray-400 mt-2 text-sm sm:text-base">Siz Manuel Neuersiz! Hujumchining zarbasini his eting, darvoza burchagini tanlang va to'pni qaytaring!</p>
+      </div>
+
+      <!-- Game Container -->
+      <div class="bg-gradient-to-b from-gray-900 to-gray-950 border-2 border-yellow-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+        
+        <!-- Scoreboard -->
+        <div class="flex items-center justify-between pb-6 mb-6 border-b border-gray-800">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-yellow-400 text-gray-950 font-display text-xl flex items-center justify-center font-bold">
+              1
+            </div>
+            <div>
+              <div class="text-xs text-gray-400 uppercase font-semibold">Darvozabon</div>
+              <div class="text-white font-bold">Manuel Neuer (Siz)</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6">
+            <div class="text-center">
+              <div class="text-2xl font-display text-emerald-400" id="gameScoreSaves">0</div>
+              <div class="text-[10px] text-gray-400 uppercase">Qaytarildi (Seyv)</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-display text-red-500" id="gameScoreGoals">0</div>
+              <div class="text-[10px] text-gray-400 uppercase">O'tkazildi (Gol)</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-display text-yellow-400" id="gameStreak">0</div>
+              <div class="text-[10px] text-gray-400 uppercase">Seriya</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pitch & Goal Visualizer -->
+        <div class="relative w-full h-80 sm:h-96 rounded-2xl bg-gradient-to-b from-emerald-950 via-emerald-900 to-green-950 border border-emerald-700/50 overflow-hidden flex flex-col items-center justify-between p-4 shadow-inner">
+          
+          <!-- Grass Stripes -->
+          <div class="absolute inset-0 pointer-events-none opacity-20 bg-[repeating-linear-gradient(0deg,#000,#000_30px,transparent_30px,transparent_60px)]"></div>
+
+          <!-- Goalpost Structure -->
+          <div class="relative w-full max-w-xl h-44 sm:h-52 border-8 border-white rounded-t-lg bg-gray-900/40 backdrop-blur-sm shadow-2xl flex items-center justify-center overflow-hidden">
+            <!-- Goal Net grid pattern -->
+            <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:12px_12px]"></div>
+
+            <!-- Target Zones (Clickable or Interactive) -->
+            <div class="absolute inset-0 grid grid-cols-3 grid-rows-2 p-2 gap-2 z-10">
+              <button class="goal-zone rounded border border-dashed border-white/20 hover:border-yellow-400 hover:bg-yellow-400/20 text-xs text-white/50 hover:text-yellow-300 font-bold transition-all flex items-center justify-center" data-zone="top-left">Yuqori Chap</button>
+              <button class="goal-zone rounded border border-dashed border-white/20 hover:border-yellow-400 hover:bg-yellow-400/20 text-xs text-white/50 hover:text-yellow-300 font-bold transition-all flex items-center justify-center" data-zone="top-center">Markaz Yuqori</button>
+              <button class="goal-zone rounded border border-dashed border-white/20 hover:border-yellow-400 hover:bg-yellow-400/20 text-xs text-white/50 hover:text-yellow-300 font-bold transition-all flex items-center justify-center" data-zone="top-right">Yuqori O'ng</button>
+              <button class="goal-zone rounded border border-dashed border-white/20 hover:border-yellow-400 hover:bg-yellow-400/20 text-xs text-white/50 hover:text-yellow-300 font-bold transition-all flex items-center justify-center" data-zone="bottom-left">Pastki Chap</button>
+              <button class="goal-zone rounded border border-dashed border-white/20 hover:border-yellow-400 hover:bg-yellow-400/20 text-xs text-white/50 hover:text-yellow-300 font-bold transition-all flex items-center justify-center" data-zone="bottom-center">Pastki Markaz</button>
+              <button class="goal-zone rounded border border-dashed border-white/20 hover:border-yellow-400 hover:bg-yellow-400/20 text-xs text-white/50 hover:text-yellow-300 font-bold transition-all flex items-center justify-center" data-zone="bottom-right">Pastki O'ng</button>
+            </div>
+
+            <!-- Keeper Avatar (Neuer) -->
+            <div id="keeperAvatar" class="relative z-20 transition-all duration-300 flex flex-col items-center">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-bayern-red border-2 border-white flex items-center justify-center text-white shadow-xl shadow-red-900/60 font-display text-2xl animate-bounce">
+                🧤
+              </div>
+              <span class="text-[10px] bg-gray-950/90 text-white font-bold px-2 py-0.5 rounded-full mt-1 border border-gray-700">NEUER #1</span>
+            </div>
+
+            <!-- Flying Ball Indicator -->
+            <div id="ballIndicator" class="absolute z-30 w-8 h-8 rounded-full bg-white border-2 border-gray-800 flex items-center justify-center shadow-2xl transition-all duration-500 scale-0 opacity-0">
+              ⚽
+            </div>
+          </div>
+
+          <!-- Bottom Prompt & Status Message -->
+          <div class="relative z-20 text-center">
+            <div id="gameMessage" class="text-sm sm:text-base font-bold text-white px-4 py-1.5 rounded-full bg-gray-950/90 border border-gray-700 shadow-md">
+              Darvozada turish uchun yuqoridagi 6 ta burchakdan birini bosing!
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Controls below -->
+        <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
+          <div class="text-xs text-gray-400">
+            <i class="fa-solid fa-circle-info text-yellow-400 mr-1"></i> Raqib zarba yo'llamoqda. Siz qaysi burchakka sakrashni to'g'ri topsangiz, Neuer to'pni ushlaydi!
+          </div>
+          <button id="resetGameBtn" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs font-bold rounded-lg transition-colors">
+            <i class="fa-solid fa-rotate-left mr-1"></i> Hisobni Yangilash
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEUER QUIZ (VIKTORINA) ================= -->
+  <section id="quiz-section" class="py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 border-t border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-bayern-red">Bilimingizni Sinang</span>
+        <h2 class="text-4xl sm:text-5xl font-display text-white mt-2">MANUEL NEUER VIKTORINASI</h2>
+        <p class="text-gray-400 mt-2 text-sm sm:text-base">Neuer faoliyati haqida qay darajada bilasiz? 5 ta qiziqarli savolga javob bering va o'z darajangizni aniqlang!</p>
+      </div>
+
+      <div class="bg-bayern-card border border-gray-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+        
+        <!-- Quiz Progress -->
+        <div class="flex items-center justify-between pb-6 border-b border-gray-800 mb-6">
+          <span class="text-xs font-bold text-gray-400" id="quizProgressText">Savol: 1 / 5</span>
+          <div class="w-32 bg-gray-800 h-2 rounded-full overflow-hidden">
+            <div id="quizProgressBar" class="bg-bayern-red h-full w-1/5 transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <!-- Question Box -->
+        <div id="quizQuestionBox" class="space-y-6">
+          <h3 id="quizQuestionTitle" class="text-xl sm:text-2xl font-bold text-white">
+            Savol yuklanmoqda...
+          </h3>
+
+          <!-- Options -->
+          <div id="quizOptionsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Dynamic options -->
+          </div>
+        </div>
+
+        <!-- Quiz Result Box (Hidden by default) -->
+        <div id="quizResultBox" class="hidden text-center py-8 space-y-6">
+          <div class="w-20 h-20 rounded-full bg-yellow-400/20 border-2 border-yellow-400 text-yellow-400 text-4xl flex items-center justify-center mx-auto">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <h3 class="text-3xl font-display text-white" id="quizScoreTitle">Natijangiz: 5 / 5</h3>
+          <p class="text-gray-300 max-w-md mx-auto text-sm sm:text-base" id="quizRankText">
+            Siz haqiqiy Neuer muxlisisiz! Uning har bir g'alabasi va harakatidan to'liq xabardorsiz!
+          </p>
+          <button id="quizRestartBtn" class="px-8 py-3 bg-bayern-red hover:bg-red-700 text-white font-bold rounded-xl transition-all">
+            <i class="fa-solid fa-rotate-right mr-2"></i> Qaytadan Sinab Ko'rish
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAMOUS QUOTES SECTION ================= -->
+  <section class="py-20 bg-gray-950 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-yellow-400">Dunyo Tan Olishi</span>
+        <h2 class="text-4xl font-display text-white mt-1">FUTBOL AFSUNGARLARI NEUER HAQIDA</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 flex flex-col justify-between">
+          <p class="text-gray-300 text-sm italic leading-relaxed mb-6">
+            "Agar xohlasa, u yarim himoyada ham bemalol eng yaxshi o'yinchi bo'la olardi. Uning oyog'idagi texnikasi ko'plab maydon o'yinchilaridan ancha ustun."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-800">
+            <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-yellow-400 font-bold">PG</div>
+            <div>
+              <div class="text-sm font-bold text-white">Pep Gvardiola</div>
+              <div class="text-xs text-gray-400">"Manchester Siti" & "Bavariya" sobiq murabbiyi</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 flex flex-col justify-between">
+          <p class="text-gray-300 text-sm italic leading-relaxed mb-6">
+            "Neuer darvozabonlik tushunchasini qaytadan yaratdi. U shunchaki darvoza qo'riqchisi emas, butun himoya sistemasining yadrosi."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-800">
+            <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-red-500 font-bold">GB</div>
+            <div>
+              <div class="text-sm font-bold text-white">Janluiji Buffon</div>
+              <div class="text-xs text-gray-400">Italiya afsonaviy posboni</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bayern-card p-6 rounded-2xl border border-gray-800 flex flex-col justify-between">
+          <p class="text-gray-300 text-sm italic leading-relaxed mb-6">
+            "Schalke bilan o'yinda uning harakatlarini ko'rib hayratda qoldim. O'sha kuni u darvoza oldida chinakam devor barpo qilgan edi."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-800">
+            <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 font-bold">SAF</div>
+            <div>
+              <div class="text-sm font-bold text-white">Ser Aleks Fergyuson</div>
+              <div class="text-xs text-gray-400">Manchester Yunayted afsonaviy ustozi</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-black border-t border-gray-900 py-12 text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-bayern-red flex items-center justify-center text-white font-display text-lg font-bold">
+          MN
+        </div>
+        <div>
+          <span class="text-white font-bold block text-sm">Manuel Neuer Fan Portal</span>
+          <span>© 2026 Barcha huquqlar himoyalangan. Afsonaviy GK xotirasi va faoliyatiga bag'ishlangan.</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 text-sm">
+        <a href="#hero" class="hover:text-yellow-400 transition-colors">Yuqoriga qaytish <i class="fa-solid fa-arrow-up ml-1"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Quotes / Interactive Dialogue -->
+  <div id="quoteModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-gray-900 border border-yellow-500/40 rounded-2xl p-6 sm:p-8 max-w-lg w-full text-center space-y-4 shadow-2xl relative">
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="w-16 h-16 rounded-full bg-bayern-red/20 text-bayern-red text-3xl flex items-center justify-center mx-auto">
+        <i class="fa-solid fa-quote-left"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white font-display text-2xl">Manuel Neuer Falsafasi</h3>
+      <p class="text-gray-300 italic text-base leading-relaxed" id="modalQuoteContent">
+        "Men xatoga yo'l qo'yishdan qo'rqmayman. Agar siz to'p ortidan yugurishda 1 soniya ikkilansangiz, raqib allaqachon gol urgan bo'ladi. Dadillik — darvozabonning bosh quroli!"
+      </p>
+      <button id="nextQuoteBtn" class="px-5 py-2.5 bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-bold rounded-xl text-xs transition-colors">
+        Keyingi iqtibosni o'qish
+      </button>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
